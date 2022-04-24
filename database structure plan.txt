@@ -1,0 +1,18 @@
+- categ1(ex: hat) -->
+        - chance1(ex: 5%) -->
+            - item1(ex: normal blue hat)
+            - item2(ex: pointy black hat)
+            - item3(ex: normal rainbow hat)
+        - chance2(ex: 10%) -->
+            - item1(ex: pointy rainbow hat)
+            - item2(ex: transparent hat)
+
+- categ2(ex: eyes) -->
+        - chance1(ex: 1%) -->
+            - item1(ex: rainbow star-shaped eyes)
+            - item2(ex: black eyes with spiral pupils)
+        - chance2(ex: 90%) -->
+            - item1(ex: brown eyes)
+            - item2(ex: black eyes)
+
+etc...
