@@ -12,10 +12,10 @@ interface folderSingleChance {
 
 export const sorter = () => {
   //put all main folders and their possible chances in array then send them to funcs below
-  const elementFolders = readdirSync("./assets/");
+  const elementFolders = readdirSync("./assets/composites/");
   const constructedArray: folderMultipleChances[] = [];
   elementFolders.forEach((folder) => {
-    const chances = readdirSync(`./assets/${folder}`).map((e) => {
+    const chances = readdirSync(`./assets/composites/${folder}`).map((e) => {
       return parseFloat(e);
     });
     constructedArray.push({ folder, chances });
@@ -48,11 +48,11 @@ const sortChances = (
 const pickItems = (foldersArr: folderSingleChance[]) => {
   const composites = foldersArr.map((e) => {
     const compositesArr = readdirSync(
-      `./assets/${e.folder}/${e.chance.toString()}`
+      `./assets/composites/${e.folder}/${e.chance.toString()}`
     );
     return {
       item: e.folder,
-      path: `./assets/${e.folder}/${
+      path: `./assets/composites/${e.folder}/${e.chance.toString()}/${
         compositesArr[Math.floor(Math.random() * compositesArr.length)]
       }`,
     };

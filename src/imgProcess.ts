@@ -14,9 +14,15 @@ import { sorter } from "./sorter";
 //   console.log(`Created avatar "${imgName.trim()}.png"`);
 // };
 
-const createAvatar = () => {
+const createAvatar = async () => {
   const blueprint = sorter();
-  console.log(blueprint);
+  const name = Date.now();
+  const mainComposite = (await read("assets/template/template.png")).clone();
+  for (let i = 0; i < blueprint.length; i++) {
+    mainComposite.composite(await read(blueprint[i].path), 0, 0);
+  }
+  mainComposite.write(`results/${name}.png`);
+  console.log(`Created avatar ${name}.png`);
 };
 
 export { createAvatar };
