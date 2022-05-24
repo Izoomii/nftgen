@@ -16,12 +16,7 @@ server.get("/main", (req, res) => {
   });
 });
 
-// createAvatar("background_white.png", [
-//   "base_model.png",
-//   "face_2.png",
-//   "hat_3.png",
-//   "cloth_1.png",
-// ]);
+createAvatar();
 
 server.listen(port, () => {
   console.log(`Server listening on port http://localhost:${port}`);
