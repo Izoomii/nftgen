@@ -18,7 +18,7 @@ server.get("/main", (req, res) => {
 
 //creates avatar, commented so it actually doesnt :p
 console.log("uncomment the function bruh");
-//createAvatar();
+// createAvatar();
 
 server.listen(port, () => {
   console.log(`Server listening on port http://localhost:${port}`);

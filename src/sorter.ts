@@ -1,5 +1,5 @@
 import { readdirSync } from "fs";
-
+import { basename } from "path";
 interface folderMultipleChances {
   folder: string;
   chances: number[];
@@ -50,11 +50,15 @@ const pickItems = (foldersArr: folderSingleChance[]) => {
     const compositesArr = readdirSync(
       `./assets/composites/${e.folder}/${e.chance.toString()}`
     );
+    const itemName =
+      compositesArr[Math.floor(Math.random() * compositesArr.length)];
     return {
       item: e.folder,
-      path: `./assets/composites/${e.folder}/${e.chance.toString()}/${
-        compositesArr[Math.floor(Math.random() * compositesArr.length)]
-      }`,
+      chance: e.chance,
+      name: basename(itemName, ".png"),
+      path: `./assets/composites/${
+        e.folder
+      }/${e.chance.toString()}/${itemName}`,
     };
   });
   return composites;
